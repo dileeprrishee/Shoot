@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="colorblue">#1F36B4</color>
+    <color name="blue">#C6F0FF</color>
+    <color name="white">#fff</color>
+    <color name="black">#000</color>
+    <color name="textcler">#707070</color>
+    <color name="bg">#E96A50</color>
+    <color name="appbar">#0045A4</color>
+    <color name="btn_bg">#0045A4</color>
+    <color name="transperent">#00000000</color>
+    <color name="btn_line">#522562</color>
+    <color name="logoclr">#666769</color>
+    <color name="button_clr">#0045A4</color>
+</resources>
