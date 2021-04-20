@@ -36,6 +36,10 @@ public class PreferenceController {
         String PREFERENCE_AMOUNT_8 = "WALLET_AMOUNT_8";
         String PREFERENCE_AMOUNT_9 = "WALLET_AMOUNT_9";
 
+        String PREFERENCE_PLAY_STATUS = "PREFERENCE_PLAY_STATUS";
+        String PREFERENCE_START_TIME = "START TIME";
+        String PREFERENCE_END_TIME = "END TIME";
+        String PREFERENCE_FCM_TOKEN = "token";
     }
 
     public static void setPreference(Context context,String key, String value) {
@@ -46,6 +50,7 @@ public class PreferenceController {
     }
 
     public static void setPreference(Context context,String key, int value) {
+
         SharedPreferences preferences = context.getSharedPreferences(PREFERENCE_NAME, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = preferences.edit();
         editor.putInt(key, value);

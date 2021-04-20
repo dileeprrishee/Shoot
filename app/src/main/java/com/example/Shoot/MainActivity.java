@@ -33,4 +33,7 @@ Button button_signin,button_reg;
             }
         });
     }
+
+    public class MyPREFERENCES {
+    }
 }

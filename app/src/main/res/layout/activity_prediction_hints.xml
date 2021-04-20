@@ -17,7 +17,7 @@
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:text="Use your own skills to predict the number which has maximum probability of winning in every slot by having a closer look at the Winning Number List provided in app menu"
-        android:textColor="@color/appbar"
+        android:textColor="@color/theme"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView15" />
@@ -32,7 +32,7 @@
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:text="Happy Winning !!!"
-        android:textColor="@color/appbar"
+        android:textColor="@color/theme"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView47" />
@@ -47,7 +47,7 @@
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:text="Dear Player, Shoot is a Skill based 'Predict &amp; Win Game. You can use your own basic intelligence, algorithms, reasoning and IQ to predict the winning number"
-        android:textColor="@color/appbar"
+        android:textColor="@color/theme"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />

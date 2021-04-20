@@ -4,79 +4,94 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
-    tools:context=".UI.Activities.login.LoginActivity">
+    android:background="@drawable/bg"
+    tools:context="com.example.Shoot.UI.Activities.login.LoginActivity">
 
 
-    <ScrollView
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/frame"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        tools:context=".UI.Activities.login.LoginActivity">
 
-        <LinearLayout
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            app:cardCornerRadius="12dp"
+            app:layout_constraintEnd_toEndOf="@+id/imageView7"
+            app:layout_constraintStart_toStartOf="@+id/imageView7"
+            app:layout_constraintTop_toBottomOf="@+id/imageView7">
+
+            <TextView
+                android:id="@+id/textView20"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@color/white"
+                android:gravity="center"
+                android:text="Guess it.. Win it.."
+                android:textColor="@color/theme"
+                android:textSize="19dp"
+                android:textStyle="bold"
+                app:fontFamily="@font/open_sans" />
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/imageView7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="16dp"
+            app:layout_constraintBottom_toTopOf="@+id/cv_slide"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.41000003">
+            <pl.droidsonroids.gif.GifImageView
+                android:id="@+id/videoview2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:src="@drawable/logogifimg"
+               />
+
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_slide"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:visibility="visible"
+            app:cardCornerRadius="32dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/frame"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                tools:context=".UI.Activities.login.LoginActivity">
-
-
-                <TextView
-                    android:id="@+id/tv_forgot_password"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:fontFamily="@font/open_sans"
-                    android:text="Forgot Password?"
-                    android:textColor="@color/appbar"
-                    android:textSize="12dp"
-                    android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="@+id/layout_sign_in"
-                    app:layout_constraintTop_toBottomOf="@+id/layout_sign_in" />
-
-                <TextView
-                    android:id="@+id/textView20"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Guess it.. Win it.."
-                    android:textColor="@color/white"
-                    android:textSize="14dp"
-                    android:textStyle="bold"
-                    app:fontFamily="@font/open_sans"
-                    app:layout_constraintEnd_toEndOf="@+id/imageView7"
-                    app:layout_constraintStart_toStartOf="@+id/imageView7"
-                    app:layout_constraintTop_toBottomOf="@+id/imageView7" />
-
-                <TextView
-                    android:id="@+id/textView21"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:text="Sign In"
-                    android:textColor="@color/textcler"
-                    android:textSize="19dp"
-                    app:fontFamily="@font/open_sans"
-                    app:layout_constraintEnd_toEndOf="@+id/imageView7"
-                    app:layout_constraintStart_toStartOf="@+id/imageView7"
-                    app:layout_constraintTop_toBottomOf="@+id/imageView33" />
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_weight="0.5"
+                app:layout_constraintStart_toStartOf="parent">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/constraintLayout2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:layout_marginBottom="16dp"
+                    android:layout_marginBottom="50dp"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="@+id/layout_sign_in"
-                    app:layout_constraintStart_toStartOf="@+id/layout_sign_in"
-                    app:layout_constraintTop_toBottomOf="@+id/tv_forgot_password">
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_forgot_password"
+                    app:layout_constraintVertical_bias="0.942">
 
                     <TextView
                         android:id="@+id/tv_signup"
@@ -88,7 +103,7 @@
                         android:background="?android:attr/selectableItemBackground"
                         android:fontFamily="@font/open_sans"
                         android:text="Sign Up Now"
-                        android:textColor="@color/appbar"
+                        android:textColor="@color/theme"
                         android:textSize="14dp"
                         android:textStyle="bold"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -105,7 +120,7 @@
                         android:layout_marginBottom="8dp"
                         android:fontFamily="@font/open_sans"
                         android:text="Don't have an account? "
-                        android:textColor="@color/appbar"
+                        android:textColor="@color/theme"
                         android:textSize="12dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -114,7 +129,7 @@
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/layout_sign_in"
+                    android:id="@+id/lay_done"
                     android:layout_width="0dp"
                     android:layout_height="50dp"
                     android:layout_marginStart="50dp"
@@ -135,6 +150,7 @@
                         android:layout_marginBottom="8dp"
                         android:fontFamily="@font/open_sans"
                         android:text="Login"
+                        android:textAllCaps="true"
                         android:textColor="@color/white"
                         android:textSize="18dp"
                         android:textStyle="bold"
@@ -145,19 +161,42 @@
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
+                <EditText
+                    android:id="@+id/et_amount"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginEnd="50dp"
+                    android:background="@drawable/bg_login_text"
+                    android:drawableTint="@color/white"
+                    android:ems="10"
+                    android:fontFamily="@font/open_sans"
+                    android:hint="Phone"
+                    android:inputType="phone"
+                    android:maxLength="10"
+                    android:paddingLeft="24dp"
+                    android:paddingRight="12dp"
+                    android:textColor="@color/textcler"
+                    android:textColorHint="@color/textcler"
+                    android:textCursorDrawable="@null"
+                    android:textSize="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/constraintLayout4"
                     android:layout_width="0dp"
                     android:layout_height="50dp"
                     android:layout_marginStart="50dp"
-                    android:layout_marginLeft="50dp"
-                    android:layout_marginTop="24dp"
+                    android:layout_marginTop="16dp"
                     android:layout_marginEnd="50dp"
-                    android:layout_marginRight="50dp"
                     android:background="@drawable/bg_login_text"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/et_phone_number">
+                    app:layout_constraintTop_toBottomOf="@+id/et_amount">
 
                     <EditText
                         android:id="@+id/et_password"
@@ -171,7 +210,7 @@
                         android:fontFamily="@font/open_sans"
                         android:hint="Password"
                         android:inputType="textPassword"
-                        android:paddingLeft="50dp"
+                        android:paddingLeft="24dp"
                         android:textColor="@color/textcler"
                         android:textColorHint="@color/textcler"
 
@@ -187,7 +226,6 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
                         android:layout_marginEnd="8dp"
-                        android:layout_marginRight="8dp"
                         android:layout_marginBottom="8dp"
                         android:onClick="click"
                         android:paddingLeft="5dp"
@@ -195,78 +233,44 @@
                         android:paddingRight="0dp"
                         android:paddingBottom="5dp"
                         android:tint="@color/textcler"
+                        android:visibility="gone"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
-                <EditText
-                    android:id="@+id/et_phone_number"
-                    android:layout_width="0dp"
-                    android:layout_height="50dp"
-                    android:layout_marginStart="50dp"
-                    android:layout_marginLeft="50dp"
-                    android:layout_marginTop="24dp"
-                    android:layout_marginEnd="50dp"
-                    android:layout_marginRight="50dp"
-                    android:background="@drawable/bg_login_text"
-                    android:drawableTint="@color/white"
-                    android:ems="10"
+                <TextView
+                    android:id="@+id/tv_forgot_password"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:fontFamily="@font/open_sans"
-                    android:hint="Username"
-                    android:inputType="phone"
-                    android:maxLength="10"
-                    android:paddingLeft="50dp"
-                    android:paddingRight="12dp"
-                    android:textColor="@color/textcler"
-                    android:textColorHint="@color/textcler"
-                    android:textCursorDrawable="@null"
-                    android:textSize="16dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView21" />
-
-                <ImageView
-                    android:id="@+id/imageView7"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:layout_marginTop="32dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/logo" />
-
-                <ImageView
-                    android:id="@+id/imageView33"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_marginTop="50dp"
-                    android:tint="#6B4250"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView20"
-                    app:srcCompat="@drawable/userlogoxxxhdpi" />
+                    android:text="Forgot Password?"
+                    android:textColor="@color/theme"
+                    android:textSize="12dp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/checkBox"
+                    app:layout_constraintEnd_toEndOf="@+id/lay_done"
+                    app:layout_constraintTop_toTopOf="@+id/checkBox" />
 
                 <ImageView
                     android:id="@+id/imageView34"
-                    android:layout_width="20dp"
+                    android:layout_width="25dp"
                     android:layout_height="0dp"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginLeft="16dp"
-                    app:layout_constraintBottom_toBottomOf="@+id/et_phone_number"
-                    app:layout_constraintStart_toStartOf="@+id/et_phone_number"
-                    app:layout_constraintTop_toTopOf="@+id/et_phone_number"
-                    app:srcCompat="@drawable/usernamelogoxxxhdpi" />
+                    android:layout_marginEnd="16dp"
+                    android:tint="@color/gray"
+                    app:layout_constraintBottom_toBottomOf="@+id/et_amount"
+                    app:layout_constraintEnd_toEndOf="@+id/et_amount"
+                    app:layout_constraintTop_toTopOf="@+id/et_amount"
+                    app:srcCompat="@drawable/ic_email" />
 
                 <ImageView
                     android:id="@+id/imageView35"
                     android:layout_width="20dp"
                     android:layout_height="0dp"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginLeft="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginRight="16dp"
                     app:layout_constraintBottom_toBottomOf="@+id/constraintLayout4"
-                    app:layout_constraintStart_toStartOf="@+id/constraintLayout4"
+                    app:layout_constraintEnd_toEndOf="@+id/constraintLayout4"
                     app:layout_constraintTop_toTopOf="@+id/constraintLayout4"
                     app:srcCompat="@drawable/locklogoxxxhdpi" />
 
@@ -274,16 +278,29 @@
                     android:id="@+id/checkBox"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginTop="16dp"
                     android:fontFamily="@font/open_sans"
                     android:text="Remember me"
-                    android:textColor="@color/appbar"
+                    android:textColor="@color/theme"
                     android:textSize="12dp"
-                    app:layout_constraintStart_toStartOf="@+id/layout_sign_in"
-                    app:layout_constraintTop_toBottomOf="@+id/layout_sign_in" />
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/lay_done" />
+
 
             </androidx.constraintlayout.widget.ConstraintLayout>
-        </LinearLayout>
-    </ScrollView>
+
+
+        </androidx.cardview.widget.CardView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:id="@+id/view12"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,5 +1,6 @@
 package com.example.Shoot.UI.Activities;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -8,6 +9,7 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
 import android.util.Log;
@@ -26,6 +28,9 @@ import com.example.Shoot.R;
 import com.example.Shoot.ServiceClass.ServiceGenerator;
 import com.example.Shoot.Storage.PreferenceController;
 import com.example.Shoot.UI.Activities.login.LoginActivity;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.messaging.FirebaseMessaging;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
@@ -55,7 +60,7 @@ public class RegisterActivity extends AppCompatActivity implements  View.OnClick
     private JsonObject valuecountry,valuesignup;
     private ArrayList country;
     private List<CountryResponse> countryResponsesdata;
-    private String CountryId,name,mobile,email,password,password2;
+    private String CountryId,name,mobile,email,password,password2, token;
     private String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
 
@@ -87,13 +92,18 @@ public class RegisterActivity extends AppCompatActivity implements  View.OnClick
         countryResponsesdata = new ArrayList<>();
 
         Clicks();
-
+        GetToken();
         img_password.setImageResource(R.drawable.ic_hide_password);
         img_confirm_password.setImageResource(R.drawable.ic_hide_password);
 
         callForProgress();
 
         SpinnerCountry();
+    }
+
+    private void getDeviceid() {
+         token = Settings.Secure.getString(getApplicationContext().getContentResolver(),
+                Settings.Secure.ANDROID_ID);
     }
 
 
@@ -139,6 +149,7 @@ public class RegisterActivity extends AppCompatActivity implements  View.OnClick
         valuesignup.addProperty("password",password);
         String key = "uHtbabjrxcKQTeuwjQ==";
         valuesignup.addProperty("skey",key);
+        valuesignup.addProperty("device_id", token);
         requestsignup.add(valuesignup);
 
 
@@ -156,10 +167,19 @@ public class RegisterActivity extends AppCompatActivity implements  View.OnClick
 
                 if (response.isSuccessful()){
                     String responsestring = response.body();
-                    Intent intent = new Intent(getApplicationContext(),LoginActivity.class);
-                    startActivity(intent);
+                    if (responsestring.equals("1")){
+                        Intent intent = new Intent(getApplicationContext(),LoginActivity.class);
+                        startActivity(intent);
+                        progressDialog.dismiss();
+                        Toast.makeText(RegisterActivity.this, "Registration Successful", Toast.LENGTH_SHORT).show();
+                    }else if (responsestring.equals("0")){
+                        Toast.makeText(RegisterActivity.this, "Registration failed, user with registered mobile number already exist", Toast.LENGTH_SHORT).show();
+                        progressDialog.dismiss();
+                    }else if (responsestring.equals("2")){
+                    Toast.makeText(RegisterActivity.this, "Registration failed, user with registered email id already exist", Toast.LENGTH_SHORT).show();
                     progressDialog.dismiss();
-                    Toast.makeText(RegisterActivity.this, "Registration Successful", Toast.LENGTH_SHORT).show();
+                }
+
 
                 }
 
@@ -192,6 +212,29 @@ public class RegisterActivity extends AppCompatActivity implements  View.OnClick
         progressDialog.setMessage("Loading");
         progressDialog.setCancelable(true); // disable dismiss by tapping outside of the dialog
         progressDialog.show();
+    }
+
+    private void GetToken() {
+        FirebaseMessaging.getInstance().getToken()
+                .addOnCompleteListener(new OnCompleteListener<String>() {
+                    @Override
+                    public void onComplete(@NonNull Task<String> task) {
+                        if (!task.isSuccessful()) {
+                            Log.w("TAG", "Fetching FCM registration token failed", task.getException());
+                            return;
+                        }
+
+                        // Get new FCM registration token
+                        token = task.getResult();
+                        PreferenceController.setPreference(getApplicationContext(), PreferenceController.PreferenceKeys.PREFERENCE_FCM_TOKEN, token);
+
+                        // Log and toast
+//                        String msg = getString(Integer.parseInt("R.string.msg_token_fmt"), token);
+//                        Log.d("TAG", msg);
+//                        Toast.makeText(Splash.this, msg, Toast.LENGTH_SHORT).show();
+                    }
+                });
+
     }
 
     private void SpinnerCountry() {

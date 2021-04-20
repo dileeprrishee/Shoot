@@ -28,16 +28,17 @@ public class LoginViewModel extends AndroidViewModel {
     public LoginViewModel(@NonNull Application application) {
         super(application);
     }
-    public  void triggerLogin(JsonArray request){
+
+    public void triggerLogin(JsonArray request) {
         callRetofit();
         final Call<LoginResponse> loginResponseCall = UI.postLogin("application/json", request);
         loginResponseCall.enqueue(new Callback<LoginResponse>() {
             @Override
             public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
-                if (response.isSuccessful()){
+                if (response.isSuccessful()) {
                     loginResponse = response.body();
                     liveData.postValue(loginResponse);
-                }else {
+                } else {
                     loginResponse = response.body();
                     liveData.postValue(loginResponse);
                 }

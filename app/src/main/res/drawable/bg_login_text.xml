@@ -3,10 +3,10 @@
 
 <shape
     xmlns:android="http://schemas.android.com/apk/res/android">
-    <corners android:topLeftRadius="5dp"
-        android:bottomLeftRadius="5dp"
-        android:bottomRightRadius="5dp"
-        android:topRightRadius="5dp"></corners>
+    <corners android:topLeftRadius="8dp"
+        android:bottomLeftRadius="8dp"
+        android:bottomRightRadius="8dp"
+        android:topRightRadius="8dp"></corners>
     <gradient android:startColor="#C4E5F5" android:endColor="#C4E5F5" />
 
 </shape>

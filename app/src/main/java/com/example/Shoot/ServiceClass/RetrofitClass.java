@@ -8,7 +8,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitClass extends Application {
-    public static final String BASE_URL = "https://hayrenstudio.com/";
+    public static final String BASE_URL = "https://coredrops.com/";
 
     static OkHttpClient.Builder httpclient=null;
     private static Retrofit retrofit=null;

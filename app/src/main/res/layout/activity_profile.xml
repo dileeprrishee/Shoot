@@ -15,31 +15,57 @@
         tools:context=".UI.ProfileFragment">
 
 
-        <com.google.android.material.appbar.AppBarLayout
-            android:id="@+id/appBarLayout2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:theme="@style/AppTheme.AppBarOverlay"
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar6"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:background="?attr/colorPrimary"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-            <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbar6"
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                android:background="@color/appbar"
-                app:popupTheme="@style/AppTheme.PopupOverlay" />
+                android:layout_height="match_parent">
 
-        </com.google.android.material.appbar.AppBarLayout>
+                <TextView
+                    android:id="@+id/textView25"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="My profile"
+                    android:textColor="@color/white"
+                    android:textSize="18dp"
+                    app:fontFamily="@font/open_sans"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.48"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/iv_back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_baseline_arrow_back_24" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.appcompat.widget.Toolbar>
 
         <ScrollView
+            android:id="@+id/scrollView4"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/appBarLayout2">
+            app:layout_constraintTop_toBottomOf="@+id/toolbar6">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -49,15 +75,16 @@
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    app:layout_constraintBottom_toBottomOf="@+id/scrollView4"
+                    app:layout_constraintTop_toBottomOf="@+id/appBarLayout2"
                     tools:context=".UI.ProfileFragment">
 
 
-                    <ImageView
+                    <pl.droidsonroids.gif.GifImageView
                         android:id="@+id/imageView37"
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:layout_marginTop="24dp"
-                        android:src="@drawable/logo"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:src="@drawable/logogifimg"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -67,7 +94,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Guess it.. Win it.."
-                        android:textColor="@color/appbar"
+                        android:textColor="@color/theme"
                         android:textSize="14dp"
                         android:textStyle="bold"
                         app:fontFamily="@font/open_sans"
@@ -85,7 +112,7 @@
                         android:layout_marginEnd="30dp"
                         android:layout_marginRight="30dp"
                         android:text="Personal Details"
-                        android:textColor="@color/appbar"
+                        android:textColor="@color/theme"
                         android:textSize="20dp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.0"
@@ -102,7 +129,7 @@
                         android:layout_marginEnd="50dp"
                         android:layout_marginRight="50dp"
                         android:text="Player Name"
-                        android:textColor="@color/appbar"
+                        android:textColor="@color/theme"
                         android:textSize="15dp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -114,11 +141,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="50dp"
                         android:layout_marginLeft="50dp"
-                        android:layout_marginTop="15dp"
+                        android:layout_marginTop="16dp"
                         android:layout_marginEnd="50dp"
                         android:layout_marginRight="50dp"
-                        android:textColor="@color/appbar"
-                        android:textSize="25dp"
+                        android:textColor="@color/theme"
+                        android:textSize="18dp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/textView88" />
@@ -129,11 +156,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="50dp"
                         android:layout_marginLeft="50dp"
-                        android:layout_marginTop="25dp"
+                        android:layout_marginTop="24dp"
                         android:layout_marginEnd="50dp"
                         android:layout_marginRight="50dp"
                         android:text="Mobile"
-                        android:textColor="@color/appbar"
+                        android:textColor="@color/theme"
                         android:textSize="15dp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -145,11 +172,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="50dp"
                         android:layout_marginLeft="50dp"
-                        android:layout_marginTop="15dp"
+                        android:layout_marginTop="16dp"
                         android:layout_marginEnd="50dp"
                         android:layout_marginRight="50dp"
-                        android:textColor="@color/appbar"
-                        android:textSize="25dp"
+                        android:textColor="@color/theme"
+                        android:textSize="18dp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/textView92" />
@@ -160,11 +187,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="50dp"
                         android:layout_marginLeft="50dp"
-                        android:layout_marginTop="15dp"
+                        android:layout_marginTop="24dp"
                         android:layout_marginEnd="50dp"
                         android:layout_marginRight="50dp"
                         android:text="Email"
-                        android:textColor="@color/appbar"
+                        android:textColor="@color/theme"
                         android:textSize="15dp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -176,11 +203,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="50dp"
                         android:layout_marginLeft="50dp"
-                        android:layout_marginTop="15dp"
+                        android:layout_marginTop="16dp"
                         android:layout_marginEnd="50dp"
                         android:layout_marginRight="50dp"
-                        android:textColor="@color/appbar"
-                        android:textSize="25dp"
+                        android:textColor="@color/theme"
+                        android:textSize="18dp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/textView94" />
@@ -191,15 +218,31 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="50dp"
                         android:layout_marginLeft="50dp"
-                        android:layout_marginTop="13dp"
+                        android:layout_marginTop="24dp"
                         android:layout_marginEnd="50dp"
                         android:layout_marginRight="50dp"
                         android:text="Country/Currency"
-                        android:textColor="@color/appbar"
+                        android:textColor="@color/theme"
                         android:textSize="15dp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/tv_umobileemail" />
+
+                    <TextView
+                        android:id="@+id/textView38"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="50dp"
+                        android:layout_marginLeft="50dp"
+                        android:layout_marginTop="24dp"
+                        android:layout_marginEnd="50dp"
+                        android:layout_marginRight="50dp"
+                        android:text="Wallet"
+                        android:textColor="@color/theme"
+                        android:textSize="15dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_ucountry" />
 
                     <TextView
                         android:id="@+id/tv_ucountry"
@@ -207,14 +250,32 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="50dp"
                         android:layout_marginLeft="50dp"
-                        android:layout_marginTop="14dp"
+                        android:layout_marginTop="16dp"
                         android:layout_marginEnd="50dp"
                         android:layout_marginRight="50dp"
-                        android:textColor="@color/appbar"
-                        android:textSize="25dp"
+                        android:text="India"
+                        android:textColor="@color/theme"
+                        android:textSize="18dp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/textView96" />
+
+                    <TextView
+                        android:id="@+id/tv_wallet"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="50dp"
+                        android:layout_marginLeft="50dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="50dp"
+                        android:layout_marginRight="50dp"
+                        android:layout_marginBottom="16dp"
+                        android:textColor="@color/theme"
+                        android:textSize="18dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView38" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </LinearLayout>
         </ScrollView>

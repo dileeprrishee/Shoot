@@ -34,7 +34,7 @@
                     android:layout_marginEnd="16dp"
                     android:layout_marginRight="16dp"
                     android:text="1.2. The Site ( provides information about leading worldwide official PREDICTIONS (each a PREDICTIONS &quot;) that are provided by independent the Online Prediction Gaming Software ).) enables registered Site users (&quot;Users) to purchase Coins for specific and separate PREDICTION (each a &quot;prediction game&quot;) by means of the Site's messenger services (&quot;the Messenger Service&quot;); and (ii) offers Services (defined below) to Users, all subject to and in accordance with these Terms. A complete list of the predictions in connection therewith we offer our Messenger services, and the schedule for each prediction game is displayed on the Site/APP"
-                    android:textColor="@color/appbar"
+                    android:textColor="@color/theme"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -49,7 +49,7 @@
                     android:layout_marginEnd="16dp"
                     android:layout_marginRight="16dp"
                     android:text="2.1. By accessing or using the Site/App, including without limitation viewing the Content (as defined below), you signify your assent to () these Terms (i) our Privacy Policy (defined below), and (ii) any other legal notices published by us on the Site (collectively the Site Terms). The Site Terms apply to all visitors and users of the Site. If you do not agree to the Site Terms, then please do not access or use the Site."
-                    android:textColor="@color/appbar"
+                    android:textColor="@color/theme"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textView10" />
@@ -64,7 +64,7 @@
                     android:layout_marginEnd="16dp"
                     android:layout_marginRight="16dp"
                     android:text="2.2. We reserve the right at your discretion, to change the Site Terms at any time; if we do so we will notify in advance of such changes. The changes will come into effect following your confirmation of acceptance thereof."
-                    android:textColor="@color/appbar"
+                    android:textColor="@color/theme"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textView11" />
@@ -79,7 +79,7 @@
                     android:layout_marginEnd="16dp"
                     android:layout_marginRight="16dp"
                     android:text="3 The Site is not intended for individuals under the age of eighteen (18) (or the applicable age in the relevant country). Therefore, if you are under 18 years (or such applicable age), you are prohibited from registering an Account (defined below) and using the Services (defined below). If it comes to our attention through reliable means that a User is under the age of 18 years (or such applicable age) we may, to the extent applicable, cancel that User's Account and/or access to the Site. Any funds deposited or any winnings of such prohibited User will be forfeited to the Authority"
-                    android:textColor="@color/appbar"
+                    android:textColor="@color/theme"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textView12" />
@@ -94,7 +94,7 @@
                     android:layout_marginEnd="16dp"
                     android:layout_marginRight="16dp"
                     android:text="2. Consent, Modification, and Language."
-                    android:textColor="@color/appbar"
+                    android:textColor="@color/theme"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textView7" />

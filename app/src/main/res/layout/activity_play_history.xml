@@ -36,6 +36,15 @@
                 app:layout_constraintHorizontal_bias="0.48"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/iv_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_baseline_arrow_back_24" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 
@@ -57,39 +66,34 @@
                 android:layout_height="match_parent"
                 tools:context=".UI.Activities.PlayHistory">
 
-                <ImageView
+                <pl.droidsonroids.gif.GifImageView
                     android:id="@+id/imageView8"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
+                    android:layout_marginTop="8dp"
+                    android:src="@drawable/logogifimg"
+                    app:layout_constraintBottom_toTopOf="@+id/textView23"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.497"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.core.widget.NestedScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/logo" />
+                    app:layout_constraintTop_toBottomOf="@+id/imageView8">
 
-                <TextView
-                    android:id="@+id/textView4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Guess it.. Win it.."
-                    android:textColor="@color/appbar"
-                    android:textSize="14dp"
-                    android:textStyle="bold"
-                    app:fontFamily="@font/open_sans"
-                    app:layout_constraintEnd_toEndOf="@+id/imageView36"
-                    app:layout_constraintStart_toStartOf="@+id/imageView8"
-                    app:layout_constraintTop_toBottomOf="@+id/imageView8" />
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyler_history"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/recyler_history"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginBottom="16dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView4" />
+                </androidx.core.widget.NestedScrollView>
+
+
             </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>
     </ScrollView>

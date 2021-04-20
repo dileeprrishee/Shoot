@@ -7,16 +7,24 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:hardwareAccelerated="false"
+        android:icon="@drawable/logo"
         android:label="Shoot"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:largeHeap="true"
+        android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".UI.Activities.WinningList"></activity>
+        <activity
+            android:name=".UI.Activities.Payment"
+            android:windowSoftInputMode="adjustResize"></activity>
+        <activity android:name=".UI.Activities.LastMatchResults" />
+        <activity android:name=".UI.Activities.WinningList" />
         <activity android:name=".UI.Activities.PredictionHints" />
         <activity android:name=".UI.Activities.TeremsConditions" />
         <activity android:name=".UI.Activities.Help" />
@@ -38,13 +46,19 @@
             android:label="Silver" />
         <activity android:name=".UI.Fragments.Home2Activity" />
         <activity android:name=".UI.Activities.NavigationActivity" />
-        <activity android:name=".UI.Activities.login.LoginActivity" />
+        <activity
+            android:name=".UI.Activities.login.LoginActivity"
+            android:windowSoftInputMode="adjustResize" />
         <activity android:name=".UI.Activities.RegisterActivity" />
         <activity android:name=".UI.Activities.HomeActivity" />
         <activity android:name=".MainActivity" />
 
-        <service android:name=".UI.Activities.Results.BackgroundService" />
-
+        <service android:name=".FireBase.FirebaseClass">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+                <action android:name="android.intent.action.RESPOND_VIA_MESSAGE"></action>
+            </intent-filter>
+        </service>
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

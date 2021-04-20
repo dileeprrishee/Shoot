@@ -1,11 +1,13 @@
 package com.example.Shoot.UI.Activities;
 
+import android.app.ProgressDialog;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import android.app.ProgressDialog;
-import android.os.Bundle;
 
 import com.example.Shoot.Adapters.AdapterWinHistory;
 import com.example.Shoot.ApiInterfaces.ApiServiceInterface;
@@ -25,8 +27,9 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 
-public class PlayHistory extends AppCompatActivity  {
+public class PlayHistory extends AppCompatActivity {
     private RecyclerView recyler_history;
+    private ImageView iv_back;
     private JsonArray jsonArray;
     private JsonObject jsonObject;
     private Retrofit retrofit;
@@ -41,19 +44,27 @@ public class PlayHistory extends AppCompatActivity  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_play_history);
 
-        recyler_history         = findViewById(R.id.recyler_history);
+        recyler_history = findViewById(R.id.recyler_history);
+        iv_back = findViewById(R.id.iv_back);
 
-        jsonArray               = new JsonArray();
-        jsonObject              = new JsonObject();
-        histories               = new ArrayList<>();
+        jsonArray = new JsonArray();
+        jsonObject = new JsonObject();
+        histories = new ArrayList<>();
 
-        progressDialog          = new ProgressDialog(PlayHistory.this);
+        progressDialog = new ProgressDialog(PlayHistory.this);
 
-        retrofit                = ServiceGenerator.builder.build();
-        UI                      = retrofit.create(ApiServiceInterface.class);
+        retrofit = ServiceGenerator.builder.build();
+        UI = retrofit.create(ApiServiceInterface.class);
 
         CallForHistory();
         Progressdilog();
+
+        iv_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
     }
 
@@ -73,11 +84,13 @@ public class PlayHistory extends AppCompatActivity  {
         historyCall.enqueue(new Callback<List<RsponseWinnerHistory>>() {
             @Override
             public void onResponse(Call<List<RsponseWinnerHistory>> call, Response<List<RsponseWinnerHistory>> response) {
-                if(response.isSuccessful()){
+                if (response.isSuccessful()) {
                     histories = response.body();
-                    recyler_history.setLayoutManager(new LinearLayoutManager(getApplicationContext(),LinearLayoutManager.VERTICAL,false));
-                  recyler_history.setAdapter(new AdapterWinHistory(getApplicationContext(),histories));
+                    recyler_history.setLayoutManager(new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL, false));
+                    recyler_history.setAdapter(new AdapterWinHistory(getApplicationContext(), histories));
                     progressDialog.cancel();
+//                    }
+
 
                 }
             }

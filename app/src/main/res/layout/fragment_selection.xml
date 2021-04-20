@@ -45,7 +45,7 @@
                         app:srcCompat="@drawable/shootlogoxxxhdpi" />
 
                     <androidx.constraintlayout.widget.ConstraintLayout
-                        android:id="@+id/constraintLayout3"
+                        android:id="@+id/lay_payment"
                         android:layout_width="wrap_content"
                         android:layout_height="0dp"
                         android:background="#B7E4E0E1"
@@ -99,7 +99,7 @@
                         android:textSize="22dp"
                         app:fontFamily="@font/berkshire_swash"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toStartOf="@+id/constraintLayout3"
+                        app:layout_constraintEnd_toStartOf="@+id/lay_payment"
                         app:layout_constraintStart_toEndOf="@+id/imageView9"
                         app:layout_constraintTop_toTopOf="parent" />
                 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,14 +7,25 @@
     android:background="@drawable/bg"
     tools:context=".UI.Activities.HomeActivity">
 
-    <ImageView
+    <androidx.cardview.widget.CardView
         android:id="@+id/imageView3"
-        android:layout_width="120dp"
+        android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginTop="50dp"
+        android:background="@color/white"
+        app:cardCornerRadius="16dp"
         app:layout_constraintStart_toStartOf="@+id/tv_myac"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo" />
+        app:layout_constraintTop_toTopOf="parent">
+        <pl.droidsonroids.gif.GifImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/logogifimg"
+            android:layout_margin="8dp"
+            app:layout_constraintStart_toStartOf="@+id/tv_myac"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.cardview.widget.CardView>
+
 
     <TextView
         android:id="@+id/tv_myac"
@@ -36,6 +47,40 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
     <TextView
+        android:id="@+id/tv_recharge"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="50dp"
+        android:background="?attr/selectableItemBackground"
+        android:text="Recharge"
+        android:textColor="@color/white"
+        android:textSize="18dp"
+        app:fontFamily="@font/open_sans"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_myac" />
+
+    <TextView
+        android:id="@+id/tv_history"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="50dp"
+        android:background="?attr/selectableItemBackground"
+        android:text="History"
+        android:textColor="@color/white"
+        android:textSize="18dp"
+        app:fontFamily="@font/open_sans"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_recharge" />
+
+    <TextView
         android:id="@+id/tv_results"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -52,7 +97,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_myac" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_history" />
 
     <TextView
         android:id="@+id/tv_History"
@@ -72,7 +117,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_results" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_history" />
 
     <TextView
         android:id="@+id/tv_help"
@@ -91,7 +136,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_History" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_results" />
 
     <TextView
         android:id="@+id/tv_conditions"
