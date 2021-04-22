@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "905319557732",
+    "project_id": "shoot-c942a",
+    "storage_bucket": "shoot-c942a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:905319557732:android:8c051b17f2072790ff0d71",
+        "android_client_info": {
+          "package_name": "com.Shoot.playandwin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "905319557732-n42tkhspc4jlgjd9ljk64kn56q5ssi4c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDqf7wZMk_n2wUtef6I93wVRwMWrK5PHLY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "905319557732-n42tkhspc4jlgjd9ljk64kn56q5ssi4c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:905319557732:android:7bb905bb7a0be1a3ff0d71",
+        "android_client_info": {
+          "package_name": "com.example.Shoot"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "905319557732-n42tkhspc4jlgjd9ljk64kn56q5ssi4c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDqf7wZMk_n2wUtef6I93wVRwMWrK5PHLY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "905319557732-n42tkhspc4jlgjd9ljk64kn56q5ssi4c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

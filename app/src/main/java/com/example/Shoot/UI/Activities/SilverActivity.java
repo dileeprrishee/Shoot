@@ -1,5 +1,6 @@
 package com.example.Shoot.UI.Activities;
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -475,6 +476,7 @@ public class SilverActivity extends AppCompatActivity implements OnFragmentInter
     }
 
 
+    @SuppressLint("ResourceAsColor")
     private void setPopUpWindow(final int old) {
         final AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
         LayoutInflater inflater = this.getLayoutInflater();
@@ -505,23 +507,21 @@ public class SilverActivity extends AppCompatActivity implements OnFragmentInter
             public void onClick(View v) {
                 walletbalance = editText.getText().toString();
                 if (walletbalance.isEmpty()) {
-                    Toast.makeText(SilverActivity.this, "Enter A Number Multiple Of 10", Toast.LENGTH_SHORT).show();
-                } else {
-
+                    Toast.makeText(SilverActivity.this, "Enter A Number Between 1 to 10", Toast.LENGTH_SHORT).show();
+                } else if (Integer.parseInt(walletbalance) <= old) {
                     String balnce = tv_wallet.getText().toString();
                     int balance = Integer.parseInt(balnce);
                     int d = Integer.parseInt(walletbalance);
                     Log.w("qq", d + "");
-                    if ((d % 10 == 0) && (!balnce.equals("0"))) {
-
+                    if ((!balnce.equals("0"))) {
                         switch (tagId) {
                             case 0:
-                                balance = balance - d;
+                                balance = balance - (d * 10);
                                 if (balance >= 0) {
                                     tv_wallet.setText("" + balance);
                                     zero.setText(walletbalance);
                                     numbers.add("0");
-                                    d = d / 10;
+//                                    d = d / 10;
                                     count.add(d + "");
                                     alertDialog.cancel();
                                 } else {
@@ -529,12 +529,12 @@ public class SilverActivity extends AppCompatActivity implements OnFragmentInter
                                 }
                                 break;
                             case 1:
-                                balance = balance - d;
+                                balance = balance - (d * 10);
                                 if (balance >= 0) {
                                     tv_wallet.setText("" + balance);
                                     one.setText(walletbalance);
                                     numbers.add("1");
-                                    d = d / 10;
+//                                    d = d / 10;
                                     count.add(d + "");
                                     alertDialog.cancel();
                                 } else {
@@ -542,11 +542,11 @@ public class SilverActivity extends AppCompatActivity implements OnFragmentInter
                                 }
                                 break;
                             case 2:
-                                balance = balance - d;
+                                balance = balance - (d * 10);
                                 if (balance >= 0) {
                                     tv_wallet.setText("" + balance);
                                     two.setText(walletbalance);
-                                    d = d / 10;
+//                                    d = d / 10;
                                     count.add(d + "");
                                     numbers.add("2");
                                     alertDialog.cancel();
@@ -555,11 +555,11 @@ public class SilverActivity extends AppCompatActivity implements OnFragmentInter
                                 }
                                 break;
                             case 3:
-                                balance = balance - d;
+                                balance = balance - (d * 10);
                                 if (balance >= 0) {
                                     tv_wallet.setText("" + balance);
                                     three.setText(walletbalance);
-                                    d = d / 10;
+//                                    d = d / 10;
                                     count.add(d + "");
                                     numbers.add("3");
 
@@ -569,11 +569,11 @@ public class SilverActivity extends AppCompatActivity implements OnFragmentInter
                                 }
                                 break;
                             case 4:
-                                balance = balance - d;
+                                balance = balance - (d * 10);
                                 if (balance >= 0) {
                                     tv_wallet.setText("" + balance);
                                     four.setText(walletbalance);
-                                    d = d / 10;
+//                                    d = d / 10;
                                     count.add(d + "");
                                     numbers.add("4");
 
@@ -583,11 +583,11 @@ public class SilverActivity extends AppCompatActivity implements OnFragmentInter
                                 }
                                 break;
                             case 5:
-                                balance = balance - d;
+                                balance = balance - (d * 10);
                                 if (balance >= 0) {
                                     tv_wallet.setText("" + balance);
                                     five.setText(walletbalance);
-                                    d = d / 10;
+//                                    d = d / 10;
                                     count.add(d + "");
                                     numbers.add("5");
 
@@ -597,11 +597,11 @@ public class SilverActivity extends AppCompatActivity implements OnFragmentInter
                                 }
                                 break;
                             case 6:
-                                balance = balance - d;
+                                balance = balance - (d * 10);
                                 if (balance >= 0) {
                                     tv_wallet.setText("" + balance);
                                     six.setText(walletbalance);
-                                    d = d / 10;
+//                                    d = d / 10;
                                     count.add(d + "");
                                     numbers.add("6");
 
@@ -611,11 +611,11 @@ public class SilverActivity extends AppCompatActivity implements OnFragmentInter
                                 }
                                 break;
                             case 7:
-                                balance = balance - d;
+                                balance = balance - (d * 10);
                                 if (balance >= 0) {
                                     tv_wallet.setText("" + balance);
                                     seven.setText(walletbalance);
-                                    d = d / 10;
+//                                    d = d / 10;
                                     count.add(d + "");
                                     numbers.add("7");
 
@@ -625,11 +625,11 @@ public class SilverActivity extends AppCompatActivity implements OnFragmentInter
                                 }
                                 break;
                             case 8:
-                                balance = balance - d;
+                                balance = balance - (d * 10);
                                 if (balance >= 0) {
                                     tv_wallet.setText("" + balance);
                                     eight.setText(walletbalance);
-                                    d = d / 10;
+//                                    d = d / 10;
                                     count.add(d + "");
                                     numbers.add("8");
 
@@ -639,11 +639,11 @@ public class SilverActivity extends AppCompatActivity implements OnFragmentInter
                                 }
                                 break;
                             case 9:
-                                balance = balance - d;
+                                balance = balance - (d * 10);
                                 if (balance >= 0) {
                                     tv_wallet.setText("" + balance);
                                     nine.setText(walletbalance);
-                                    d = d / 10;
+//                                    d = d / 10;
                                     count.add(d + "");
                                     numbers.add("9");
 
@@ -661,9 +661,11 @@ public class SilverActivity extends AppCompatActivity implements OnFragmentInter
                     } else if (walletbalance.isEmpty()) {
                         Toast.makeText(SilverActivity.this, "Enter A value", Toast.LENGTH_SHORT).show();
                     } else {
-                        Toast.makeText(SilverActivity.this, "Not A Multiple Of 10", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(SilverActivity.this, "Not A Number between 1 to 10", Toast.LENGTH_SHORT).show();
                     }
 
+                } else {
+                    Toast.makeText(SilverActivity.this, "Enter an amount grater than the old", Toast.LENGTH_SHORT).show();
                 }
             }
 

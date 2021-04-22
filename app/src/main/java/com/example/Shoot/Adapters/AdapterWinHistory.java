@@ -41,7 +41,7 @@ public class AdapterWinHistory extends RecyclerView.Adapter<AdapterWinHistory.Vi
     public void onBindViewHolder(@NonNull final AdapterWinHistory.ViewHolder holder, int position) {
         RsponseWinnerHistory history = winnerHistoryList.get(position);
         List<WinnerDetails> details = history.getWinnerDetails();
-        holder.tv_matchid.setText("Match Id : " + history.getMatchId());
+        holder.tv_matchid.setText("Order Id : " + history.getMatchId());
         holder.tv_number.setText("Winning Number : " + history.getNumberWon());
         for (int i = 0; i < details.size(); i++) {
             setRcv(holder, details);
